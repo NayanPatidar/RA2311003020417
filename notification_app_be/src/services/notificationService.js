@@ -60,7 +60,6 @@ async function createNotification(data) {
     throw new Error("User not found");
   }
 
-  // Check user preferences
   const preferredChannel = channel || "push";
   if (!user.preferences[preferredChannel]) {
     await Log("backend", "warn", "service", `User ${userId} has disabled ${preferredChannel} notifications, skipping delivery`);

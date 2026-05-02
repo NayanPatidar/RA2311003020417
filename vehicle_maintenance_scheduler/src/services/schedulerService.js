@@ -41,13 +41,8 @@ async function fetchTasks(token) {
   return data.vehicles;
 }
 
-/**
- * 0/1 Knapsack DP.
- * Returns max impact, selected tasks, and hours used.
- */
 function knapsack(tasks, capacity) {
   const n = tasks.length;
-  // table[i][w] = max impact using first i tasks with w hours budget
   const table = Array.from({ length: n + 1 }, () => new Array(capacity + 1).fill(0));
 
   for (let i = 1; i <= n; i++) {
@@ -61,7 +56,6 @@ function knapsack(tasks, capacity) {
     }
   }
 
-  // Backtrack to find which tasks were selected
   const selected = [];
   let w = capacity;
   for (let i = n; i > 0; i--) {

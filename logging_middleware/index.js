@@ -1,8 +1,3 @@
-/**
- * Logging Middleware
- * Reusable logging package that sends logs to the Affordmed evaluation server.
- */
-
 const VALID_STACKS = ["backend", "frontend"];
 const VALID_LEVELS = ["debug", "info", "warn", "error", "fatal"];
 const VALID_PACKAGES_BACKEND = [
@@ -18,18 +13,10 @@ const LOG_API_URL = "http://20.207.122.201/evaluation-service/logs";
 
 let _authToken = null;
 
-/**
- * Initialize the logger with a Bearer token.
- * Call this once after obtaining the token from the auth endpoint.
- * @param {string} token - Bearer access token
- */
 function initLogger(token) {
   _authToken = token;
 }
 
-/**
- * Validates the Log parameters against allowed values.
- */
 function validateParams(stack, level, pkg) {
   if (!VALID_STACKS.includes(stack)) {
     throw new Error(`Invalid stack "${stack}". Must be one of: ${VALID_STACKS.join(", ")}`);
@@ -50,13 +37,6 @@ function validateParams(stack, level, pkg) {
   }
 }
 
-/**
- * Sends a log entry to the evaluation server.
- * @param {string} stack   - "backend" or "frontend"
- * @param {string} level   - "debug" | "info" | "warn" | "error" | "fatal"
- * @param {string} pkg     - Package name (see allowed values per stack)
- * @param {string} message - Descriptive log message
- */
 async function Log(stack, level, pkg, message) {
   try {
     validateParams(stack, level, pkg);

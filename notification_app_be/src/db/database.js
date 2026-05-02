@@ -5,7 +5,6 @@ const db = {
   notifications: [],
 };
 
-// --- User Operations ---
 function getAllUsers() { return db.users; }
 
 function getUserById(id) { return db.users.find((u) => u.id === id) || null; }
@@ -39,7 +38,6 @@ function deleteUser(id) {
   return true;
 }
 
-// --- Notification Operations ---
 function getAllNotifications() { return db.notifications; }
 
 function getNotificationsByUser(userId) {

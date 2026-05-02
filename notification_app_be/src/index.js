@@ -23,7 +23,6 @@ async function getAuthToken() {
 const app = express();
 app.use(express.json());
 
-// CORS middleware for frontend integration
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
@@ -32,19 +31,16 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes
 const userRoutes = require("./routes/userRoutes");
 const notificationRoutes = require("./routes/notificationRoutes");
 
 app.use("/api/users", userRoutes);
 app.use("/api/notifications", notificationRoutes);
 
-// Health check
 app.get("/", (req, res) => {
   res.json({ status: "Notification App API is running" });
 });
 
-// Global error handler
 app.use((err, req, res, next) => {
   Log("backend", "fatal", "handler", `Unhandled server error: ${err.message}`);
   res.status(500).json({ error: "Internal Server Error", message: err.message });

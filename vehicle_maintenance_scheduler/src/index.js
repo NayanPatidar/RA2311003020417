@@ -23,7 +23,6 @@ async function getAuthToken() {
 const app = express();
 app.use(express.json());
 
-// Routes
 const vehicleRoutes = require("./routes/vehicleRoutes");
 const maintenanceRoutes = require("./routes/maintenanceRoutes");
 const scheduleRoutes = require("./routes/scheduleRoutes");
@@ -32,12 +31,10 @@ app.use("/api/vehicles", vehicleRoutes);
 app.use("/api/maintenance", maintenanceRoutes);
 app.use("/api/schedule", scheduleRoutes);
 
-// Health check
 app.get("/", (req, res) => {
   res.json({ status: "Vehicle Maintenance Scheduler API is running" });
 });
 
-// Global error handler
 app.use((err, req, res, next) => {
   Log("backend", "fatal", "handler", `Unhandled server error: ${err.message}`);
   res.status(500).json({ error: "Internal Server Error", message: err.message });

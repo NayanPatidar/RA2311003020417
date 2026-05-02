@@ -1,16 +1,9 @@
-/**
- * In-memory database for Vehicle Maintenance Scheduler.
- * Stores vehicles and maintenance records.
- */
-
 const { v4: uuidv4 } = require("uuid");
 
 const db = {
   vehicles: [],
   maintenanceRecords: [],
 };
-
-// --- Vehicle Operations ---
 
 function getAllVehicles() {
   return db.vehicles;
@@ -46,12 +39,9 @@ function deleteVehicle(id) {
   const idx = db.vehicles.findIndex((v) => v.id === id);
   if (idx === -1) return false;
   db.vehicles.splice(idx, 1);
-  // Cascade delete maintenance records
   db.maintenanceRecords = db.maintenanceRecords.filter((r) => r.vehicleId !== id);
   return true;
 }
-
-// --- Maintenance Record Operations ---
 
 function getAllMaintenanceRecords() {
   return db.maintenanceRecords;

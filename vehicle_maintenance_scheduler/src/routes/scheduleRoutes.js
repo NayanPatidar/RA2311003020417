@@ -3,7 +3,6 @@ const router = express.Router();
 const { Log } = require("../../../logging_middleware/index");
 const { runScheduler } = require("../services/schedulerService");
 
-// GET /api/schedule — run knapsack optimizer across all depots
 router.get("/", async (req, res) => {
   try {
     await Log("backend", "info", "route", "GET /api/schedule requested");
