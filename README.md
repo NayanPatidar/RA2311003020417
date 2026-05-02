@@ -58,3 +58,10 @@ npm start
   <img src="https://github.com/user-attachments/assets/949c8b9e-d397-4a3d-80f0-94cf38f9da25" width="45%" />
   <img src="https://github.com/user-attachments/assets/30db6622-f14c-4c5a-9fea-fd949502459c" width="45%" />
 </p>
+
+## Priority Inbox Script
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/111f8df5-64d5-4cb7-bee7-820ca41bc749" width="70%" />
+</p>
+
