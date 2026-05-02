@@ -44,3 +44,17 @@ npm start
 - `GET/POST /api/users` — Manage users
 - `GET/POST /api/notifications` — Send/fetch notifications
 - `PUT /api/notifications/:id/read` — Mark as read
+
+## Vehicle Maintenance Scheduler
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c2ecedd8-5c02-4757-a3b0-7fa16ec2466a" width="45%" />
+  <img src="https://github.com/user-attachments/assets/f16b385c-c9a9-4a9c-a953-d99c8bdba04a" width="45%" />
+</p>
+
+## Notification App
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/949c8b9e-d397-4a3d-80f0-94cf38f9da25" width="45%" />
+  <img src="https://github.com/user-attachments/assets/30db6622-f14c-4c5a-9fea-fd949502459c" width="45%" />
+</p>
